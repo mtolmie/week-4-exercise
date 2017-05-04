@@ -1,11 +1,13 @@
 
 
-var numberList = [19-120];
+// $("#start").click(startClickRedCrystal);
 
-var crystalOptions = ("blue", "green", "yellow", "red");
+
+	var crystalOptions = ["blueCrystal", "greenCrystal", "yellowCrystal", "redCrystal"];
 
     // Computer selected solution will be held here.
-    var chosenNumber = "";
+    var chosenNumber = Math.floor(Math.random() * ((120-19)+1) + 19);
+   console.log("chosenNumber", chosenNumber);
 
     // This will break the numbers within the crystal within the solution
     var numbersInChosenCrystal = [];
@@ -25,6 +27,65 @@ var crystalOptions = ("blue", "green", "yellow", "red");
     var loseCounter = 0;
     var guessCounter = 5;
 
+    // crystal variables for counting each number on each cystal
+
+    var redCrystal = 0;
+    var blueCrystal = 0;
+    var yellowCrystal = 0;
+    var greenCrystal = 0;
+
+function selectRedCrystalNumber() {
+var redCrystalNumber = Math.floor(Math.random() * ((12-1)+1) + 1);
+   console.log("redCrystalNumber", redCrystalNumber);
+}
+
+function selectBlueCrystalNumber() {
+var redCrystalNumber = Math.floor(Math.random() * ((12-1)+1) + 1);
+   console.log("blueCrystalNumber", redCrystalNumber);
+}
+
+function selectGreenCrystalNumber() {
+var redCrystalNumber = Math.floor(Math.random() * ((12-1)+1) + 1);
+   console.log("greenCrystalNumber", redCrystalNumber);
+}
+
+function selectYellowCrystalNumber() {
+var redCrystalNumber = Math.floor(Math.random() * ((12-1)+1) + 1);
+   console.log("yellowCrystalNumber", redCrystalNumber);
+}
+
+
+$(document).ready(function(){
+    console.log("document.ready");
+    $("#redCrystal").on("click", function() {
+        selectRedCrystalNumber();
+	});
+
+    $("#blueCrystal").on("click", function() {
+        selectBlueCrystalNumber();
+     });
+   
+    $("#greenCrystal").on("click", function() {
+        selectGreenCrystalNumber();
+    });
+   
+    $("#yellowCrystal").on("click", function() {
+        selectYellowCrystalNumber();
+    });
+
+
+	$("#randomButton").on("click",function(){
+		alert("test");
+	});
+});
+
+// var foo = [];
+// for (var i = n; n <= j; i++) {
+//     foo.push(i);
+// }
+
+
+
 
     // FUNCTIONS (These are bits of code that we will call upon to run when needed).
     // ==================================================================================================
@@ -32,46 +93,52 @@ var crystalOptions = ("blue", "green", "yellow", "red");
     // startGame()
     // It's how we we will start and restart the game.
    
-    function startGame() {
-        var guessCounter = 5;
-        chosenNumber = numberList[Math.floor(Math.random() * chosenNumber.length)];
-        numbersInChosenCrystal = chosenNumber.split("");
-        numBlanks = numbersInChosenCrystal.length;
-        console.log(chosenNumber);
-       ghostRider = [];
-       wrongGuesses = [];
-       for(i =0; i < numBlanks; i++) {
-       	ghostRider.push ("_");
-       }
-       console.log(ghostRider);
-    };
-
-function checkNumbers (number) {
-var numbersInChosenCrystal = false;
-for (i=0; i < numBlanks; i++) {
-	if (chosenNumber [i] === number) {
-numbersInChosenCrystal = true;
-
-var crystalDiv = $('#crstalOptions');
-
-var numberList = $('<div>' + numberList[i]) + '</div>');
-
-crystalDiv.append(newCrystalDiv);
-
-
-
-	}
-
-}
-
-};
+ 
 
 
 
 
+   
+
+//     function startGame() {
+//         guessCounter = 5;
+//         numbersInChosenCrystal = chosenNumber.split("");
+//         numBlanks = numbersInChosenCrystal.length;
+//         console.log(chosenNumber);
+//        ghostRider = [];
+//        wrongGuesses = [];
+//        for(i =0; i < numBlanks; i++) {
+//        	ghostRider.push ("_");
+//        }
+//        console.log(ghostRider);
+//     };
+
+// 	function checkNumbers (number) {
+// 		numbersInChosenCrystal = false;
+// 		for (i=0; i < numBlanks; i++) {
+// 		if (chosenNumber [i] === number) {
+// 			numbersInChosenCrystal = true;
+// 			var redCrystal = "";
+
+// 			for (var i =0; i <= 12; i++){
+// 				redCrystal =Math.floor(Math.random() + 1);
+// 				numbersInChosenCrystal =random + redCrystal;
+// 				console.log(redCrystal);
+// 			}
 
 
 
-var randomNumber = 19-120;
-if(randomNumber 19 === 120 && randomNumber!= 0){
+
+// 			var crystalDiv = $('#crstalOptions');
+
+// 			var numberList = $('<div>' + numberList[i]) + '</div>';
+
+// 			crystalDiv.append(newCrystalDiv);
+// 		}
+
+// }
+
+// };
+
+
 	
