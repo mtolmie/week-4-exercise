@@ -27,7 +27,11 @@ while (m < crystalNum.length) {
         m++;
     }
 }
-console.log(crystalNum);
+
+var counter = 0;
+    var winCounter = 0;
+    var lossCounter = 0;
+// console.log(crystalNum);
 
 	var crystalOptions = ["blueCrystal", "greenCrystal", "yellowCrystal", "redCrystal"];
 
@@ -75,10 +79,33 @@ var redCrystalNumber = Math.floor(Math.random() * ((12-1)+1) + 1);
    console.log("yellowCrystalNumber", redCrystalNumber);
 }
 
-$("#red-crystal").attr("data-crystalvalue", crystalNum[0])
-$("#green-crystal").attr("data-crystalvalue", crystalNum[1])
-$("#blue-crystal").attr("data-crystalvalue", crystalNum[2])
-$("#black-crystal").attr("data-crystalvalue", crystalNum[3])
+$("#redCrystal").attr("crystalvalue", crystalNum[0])
+$("#blueCrystal").attr("crystalvalue", crystalNum[1])
+$("#greenCrystal").attr("crystalvalue", crystalNum[2])
+$("#yellowCrystal").attr("crystalvalue", crystalNum[3])
+
+
+
+$("#redCrystal").on("click", function() {
+    var crystalValue = $(this).attr("crystalvalue");
+    console.log(crystalValue);
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+    
+    $("#current-total").text(counter);
+   
+
+    });
+
+
+    $("#blueCrystal").on("click", function() {
+    var crystalValue = ($(this).attr("crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+    counter += crystalValue;
+
+    $("#current-total").text(counter + "");
+
+    });
 
 $(document).ready(function(){
     console.log("document.ready");
@@ -86,9 +113,9 @@ $(document).ready(function(){
         selectRedCrystalNumber();
 if (counter === chosenNumber) {
         winCounter++
-        $("#wins").text(winCounter);
+        $("#wins").text(winCounter + "");
 
-    } else if (counter >= chosenNumber) {
+    } else if (counter > chosenNumber) {
         lossCounter++
         $("#losses").text(lossCounter);
     }
@@ -96,25 +123,53 @@ if (counter === chosenNumber) {
 
 });
 
-    $("#redCrystal").on("click", function() {
-    var crystalValue = ($(this).attr("crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    counter += crystalValue;
-
-    $("#current-total").text(counter);
-
-	});
+    
 
     $("#blueCrystal").on("click", function() {
         selectBlueCrystalNumber();
+
+        if (counter === chosenNumber) {
+        winCounter++
+        $("#wins").text(winCounter);
+
+    } else if (counter > chosenNumber) {
+        lossCounter++
+        $("#losses").text(lossCounter);
+    }
+    $("#current-total").text(counter);
+
      });
+
    
     $("#greenCrystal").on("click", function() {
         selectGreenCrystalNumber();
+
+
+        if (counter === chosenNumber) {
+        winCounter++
+        $("#wins").text(winCounter);
+
+    } else if (counter > chosenNumber) {
+        lossCounter++
+        $("#losses").text(lossCounter);
+    }
+    $("#current-total").text(counter);
+
     });
    
     $("#yellowCrystal").on("click", function() {
         selectYellowCrystalNumber();
+
+        if (counter === chosenNumber) {
+        winCounter++
+        $("#wins").text(winCounter);
+
+    } else if (counter > chosenNumber) {
+        lossCounter++
+        $("#losses").text(lossCounter);
+    }
+    $("#current-total").text(counter);
+
     });
 
 
@@ -146,20 +201,6 @@ if (counter === chosenNumber) {
 
 
 
-// var foo = [];
-// for (var i = n; n <= j; i++) {
-//     foo.push(i);
-// }
-
-
-
-
-    // FUNCTIONS (These are bits of code that we will call upon to run when needed).
-    // ==================================================================================================
-
-    // startGame()
-    // It's how we we will start and restart the game.
-   
  
 
 
@@ -167,45 +208,6 @@ if (counter === chosenNumber) {
 
    
 
-//     function startGame() {
-//         guessCounter = 5;
-//         numbersInChosenCrystal = chosenNumber.split("");
-//         numBlanks = numbersInChosenCrystal.length;
-//         console.log(chosenNumber);
-//        ghostRider = [];
-//        wrongGuesses = [];
-//        for(i =0; i < numBlanks; i++) {
-//        	ghostRider.push ("_");
-//        }
-//        console.log(ghostRider);
-//     };
-
-// 	function checkNumbers (number) {
-// 		numbersInChosenCrystal = false;
-// 		for (i=0; i < numBlanks; i++) {
-// 		if (chosenNumber [i] === number) {
-// 			numbersInChosenCrystal = true;
-// 			var redCrystal = "";
-
-// 			for (var i =0; i <= 12; i++){
-// 				redCrystal =Math.floor(Math.random() + 1);
-// 				numbersInChosenCrystal =random + redCrystal;
-// 				console.log(redCrystal);
-// 			}
-
-
-
-
-// 			var crystalDiv = $('#crstalOptions');
-
-// 			var numberList = $('<div>' + numberList[i]) + '</div>';
-
-// 			crystalDiv.append(newCrystalDiv);
-// 		}
-
-// }
-
-// };
 
 
 	
