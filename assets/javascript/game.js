@@ -28,7 +28,7 @@ while (m < crystalNum.length) {
     }
 }
 
-var counter = 0;
+ counter = 0;
     var winCounter = 0;
     var lossCounter = 0;
 // console.log(crystalNum);
