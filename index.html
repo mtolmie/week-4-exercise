@@ -14,14 +14,16 @@
 
 <h1 class = "text-center"> Crystal Game!</h1>
 <div class ="text-center">
-	
-	</div>
+  
+  </div>
       <p>Click on each crystal to determine the value </p>
       <p>Press any crystal to get started!</p>
 
 <p>
 Let's play the cyrstal game!
 </p>
+<!-- This is what I added to get the number to show -->
+<h2>Number to Guess: <span id="number-to-guess"></span></h2>
 
 <img id ="blueCrystal" src="assets/images/bluegem.jpg" class="auth-image" alt="Michael Tolmie">
 <img id ="redCrystal" src="assets/images/redgem.jpg" class="auth-image" alt="Michael Tolmie">
@@ -32,7 +34,10 @@ Let's play the cyrstal game!
      <h2>Current Total: <span id="current-total"></span></h2>
      <h3>Wins: <span id="wins"></span></h3>
      <h3>Losses: <span id="losses"></span></h3>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+</body>
+</html>
      
  
 <!-- // The player will have to guess the answer, just like in Hangman. This time, though, the player will guess with numbers instead of letters. 
@@ -70,8 +75,3 @@ Let's play the cyrstal game!
 // Each crystal should have a random hidden value between 1 - 12. -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/game.js"></script>
-</body>
-
-</html>
